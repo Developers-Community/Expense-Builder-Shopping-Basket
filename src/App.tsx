@@ -6,6 +6,7 @@ const App = () => {
 
   return (
     <div className="container">
+      Shopping basket
       <ProductsScreen />
 
       <BasketScreen />
