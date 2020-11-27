@@ -1,9 +1,10 @@
-import { removeToBasket, store } from "../redux/index"
+import { store } from "../redux/index"
 import { ProductItem } from "global"
 import { useSelector } from "react-redux"
+import { removeToBasket } from "../redux/basketSlice"
+import { FC } from "react"
 
-
-const BasketScreen = () => {
+const BasketScreen: FC = () => {
 
 
     const state = useSelector((state: ProductItem[]) => state)

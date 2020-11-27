@@ -1,8 +1,11 @@
-import { addToBasket, store } from "../redux/index"
+import { store } from "../redux/index"
 import { useSelector } from "react-redux"
 import { ProductItem } from "../global"
+import { addToBasket } from "../redux/basketSlice"
+import { FC } from "react"
 
-const ProductsScreen = () => {
+
+const ProductsScreen: FC = () => {
 
     const state = useSelector((state: ProductItem[]) => state)
 
@@ -14,10 +17,9 @@ const ProductsScreen = () => {
                         <div className="card card-panel hoverable">
                             <div className="card-image">
                                 <img style={{ width: "200px", height: "180px" }} src={product.imageUrl} alt="product" />
-                                <span className="card-title center-align">{product.title}</span>
                             </div>
+                            <h5 className="card-title truncate">{product.title}</h5>
                             <h5 className="truncate">${product.price}</h5>
-
                             <div className="card-content ">
                                 <p className="truncate">{product.description}</p>
                             </div>
@@ -29,7 +31,6 @@ const ProductsScreen = () => {
                         </div>
                     </div>
                 })}
-
             </div>
         </div >
     )
